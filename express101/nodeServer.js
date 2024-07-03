@@ -1,9 +1,9 @@
 // http is native to NodeJS. We just have to ask for it
-const http = require('http');
+const http = require('http')
 
 // fs = file system module! fs is built into Node. see above
 // fs gives node access to THIS computers file system.
-const fs = require('fs');
+const fs = require('fs')
 
 // the http module has a createServer method
 // takes 1 arg:
@@ -21,29 +21,29 @@ const server = http.createServer((req, res)=>{
         // writeHead takes 2 args:
         // 1. status code
         // 2. object for the mime-type
-        res.writeHead(200,{'content-type':'text/html'});
-        // res.write('');
+        res.writeHead(200,{'content-type':'text/html'})
+        // res.write('')
         const homePageHTML = fs.readFileSync('node.html')
         res.write(homePageHTML)
-        res.end();
+        res.end()
     }else if(req.url === "/node.png"){
-        res.writeHead(200,{'content-type':'image/png'});
+        res.writeHead(200,{'content-type':'image/png'})
         const image = fs.readFileSync('node.png')
         res.write(image)
-        res.end();
+        res.end()
     }else if(req.url === "/styles.css"){
-        res.writeHead(200,{'content-type':'text/css'});
+        res.writeHead(200,{'content-type':'text/css'})
         const css = fs.readFileSync('styles.css')
         res.write(css)
-        res.end();        
+        res.end()        
     }else{
-        res.writeHead(404,{'content-type':'text/html'});
-        res.write(`<h4>Sorry, this isn't the page you're looking for!</h4>`);
-        res.end();        
+        res.writeHead(404,{'content-type':'text/html'})
+        res.write(`<h4>Sorry, this isn't the page you're looking for!</h4>`)
+        res.end()        
     }
-});
+})
 
 // createServer returns an object with a listen method
 // listen takes 1 arg:
 // 1. port to listen for http traffic on
-server.listen(3000);
+server.listen(3000)
