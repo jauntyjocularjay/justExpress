@@ -1,0 +1,13 @@
+
+HTTP
+
+works on the Application Layer, relies on TCP/IP
+
+HTTP message:
+Start line
+Header
+- key, value pairs
+- MIME type ex Content-Type: text/html
+Body
+- the content or message data
+

@@ -1,0 +1,42 @@
+
+Packet Layers include:
+
+Physical    - cables
+Link        - Wifi, ethernet protocol
+Network     - IP
+Transport   - UDP/TCP
+Application - HTTP, FTP, SSH, SMIP
+
+Network + Transport Layer = TCP/IP
+
+Localhost ports are one of 2^16 ports opened by Node
+
+Data added to ->
+Transport segment, added to -> Network Segment
+Network Segment includes
+Source port address, end point address
+
+UDP
+for Real Time data transfer
+sends data regardless, only sends once
+
+TCP
+Connection base, verifies connection, awaits response, sends data
+Delivery acknowledgement
+Retransmission: if data is lost, sends data to complete
+Transmits packets in order
+throttles latency for more efficient transfer
+
+TCP for reliability - HTTP relies on TCP
+UDP for Fast, but can be somewhat unreliable
+
+TCP/IP is the transport layer (instead of UDP) that connects and sustains connection between two computers
+
+
+
+
+
+
+
+
+
