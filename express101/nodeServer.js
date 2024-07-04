@@ -1,9 +1,11 @@
 const http = require('http')
 
-// httm modules has a createServer method
+// fs is the file system module. Gives access to THIS computer file system.
+const fs = require('fs')
 
+/*
 const server = http.createServer((req, res) => {
-    console.log(req)
+    console.log(req.url) // url is the path sent by the url
 
     // Dictates how the message is interpreted
     // in this case, as an HTML document
@@ -13,7 +15,28 @@ const server = http.createServer((req, res) => {
     // indicates the end of message
     res.end()
 })
+*/
 
+// http modules has a createServer method
+const server = http.createServer((req, res) => {
+    console.log(req.url) // url is the path sent by the url
+
+    if(req.url === '/'){
+        // an HTML document
+        res.writeHead(200, {'content-type': 'text/html'})
+        // Sends the message as plain text
+        res.write('<h1>Hello, World!</h1>')
+        // indicates the end of message
+        res.end()
+    } else {
+        // an HTML document
+        res.writeHead(400, {'content-type': 'text/html'})
+        // Sends the message as plain text
+        res.write('<h1>Sorry, these are not the droids you are looking for.</h1>')
+        // indicates the end of message
+        res.end()
+    }
+})
 
 // listening for HTTP traffic
 server.listen(3000)
