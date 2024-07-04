@@ -1,10 +1,30 @@
 // NODEJS IS the language
 // Express is node, a node module
 
-const path = require('path');
-
+const path = require('path')
 // http is a native module
-// const http = require('http');
+// const http = require('http')
+const express = require('express')
+// App is the express.createApplication and is an express application
+const app = express()
+// app.all(route, (callback) => {})
+
+
+// serve up static files 
+app.use(express.static('public'))
+
+app.all('*', (req,res) => {
+    // Express handles basic headers
+
+    // res.send(`<h1>This is the home page</h1>`)
+    res.sendFile(path.join(__dirname + '/node.html'))
+
+    // Express handles the end
+})
+
+
+
+/*
 // express is a 3rd party module
 const express = require('express');
 // An "app" is the express function (createAppliction inside the Express module)
@@ -25,6 +45,6 @@ app.all('/',(req, res)=>{
     // res.send(`<h1>This is the home page</h1>`)
     // Express handles the end! Awesome!
 });
-
+*/
 app.listen(3000)
 console.log("The server is listening on port 3000...")

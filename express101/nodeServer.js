@@ -27,6 +27,22 @@ const server = http.createServer((req, res) => {
         // Sends the message as plain text
         res.write('<h1>Hello, World!</h1>')
         // indicates the end of message
+        const homePageHTML = fs.readFileSync('./express101/node.html')
+        res.write(homePageHTML)
+        res.end()
+    } else if (req.url === '/node.png') {
+        // an HTML document
+        res.writeHead(200, {'content-type': 'img/png'})
+        
+        const img = fs.readFileSync('./express101/node.png')
+        res.write(img)
+        res.end()
+    } else if (req.url === '/styles.css') {
+        // an HTML document
+        res.writeHead(200, {'content-type': 'text/css'})
+        
+        const css = fs.readFileSync('./express101/styles.css')
+        res.write(css)
         res.end()
     } else {
         // an HTML document

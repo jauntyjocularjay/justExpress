@@ -9,7 +9,7 @@ const app = express();
 // 2. post - CREATE
 // 3. delete - DELETE
 // 4. put - UPDATE
-// 5. all - i will accept any method
+// 5. all - will accept any method
 
 // Take 2 args:
 // 1. path
@@ -19,6 +19,7 @@ const app = express();
 //     res.send(`<h1>Welcome to the home page!`)
 // })
 
+/*
 app.get('/',(req, res)=>{
     console.log(req)
     res.send(`<h1>Welcome to the home GET page!`)
@@ -32,6 +33,17 @@ app.delete('/',(req, res)=>{
 app.put('/',(req, res)=>{
 
 })
+*/
+
+// app.all('/', (req, res) => {
+//     res.send(`<h1>Welcome Home</h1>`)
+// })
+app.get('/', (req, res) => {
+    res.send(`<h1>Welcome GET</h1>`)
+})
+app.post('/', (req, res) => {})
+app.delete('/', (req, res) => {})
+app.put('/', (req, res) => {})
 
 app.listen(3000)
 console.log("The server is listening on port 3000...")
