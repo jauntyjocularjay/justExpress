@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start101": "nodemon ./express101/nodeServer.js",
+    "start201": "nodemon ./express201/nodeServer.js",
+    "start301": "nodemon ./express301/nodeServer.js"
+  },
   "dependencies": {
     "nodemon": "^3.1.4"
   }

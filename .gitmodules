@@ -1,0 +1,6 @@
+[submodule "git"]
+	path = git
+	url = https://github.com/jauntyjocularjay/kwikgit.git
+[submodule "src/module/chaitests"]
+	path = src/module/chaitests
+	url = https://github.com/jauntyjocularjay/chaitests.git
